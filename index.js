@@ -6,8 +6,6 @@ for(let i=0; i<keys.length; i++){
 
 function compute(button){
     var a = button.innerText;
-    var op1=0;
-    var op2=0;
     switch(a)
     {
         case "1":
@@ -41,23 +39,30 @@ function compute(button){
             result.innerText+=a;
            break;
         case "=":
-            op2=parseInt(result.innerText);
-            console.log((op1+op2).toString());
-            break
+            result.innerText=eval(result.innerText);
+            break;
         case "+":
-            op1=parseInt(result.innerText);
-            result.innerText="";
-            break
-
+            result.innerText+=a;
+            break;
         case "-":
+           result.innerText+=a;
+            break;
         case "*":
+           result.innerText+=a;
+            break;
         case "/":
+           result.innerText+=a;
+            break;
         case "AC":
             result.innerText="";
         case "(":
         case ")":
-        case ".":
-        case "%":
+        case ".": 
+            result.innerText+=a;
+            break;
+        case "%": 
+            result.innerText+=a;
+            break;
                 
     } 
 }
